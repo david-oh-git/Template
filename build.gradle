@@ -1,0 +1,50 @@
+import io.davidosemwota.template.buildsource.Libs
+
+apply from: "$rootProject.projectDir/gradle/git-hooks.gradle"
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath Libs.androidGradlePlugin
+        classpath Libs.Kotlin.gradlePlugin
+        classpath Libs.benManesUpdatePlugin
+        classpath Libs.spotlessPlugin
+        classpath Libs.ktlint
+    }
+}
+
+subprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+    apply from: "$rootProject.projectDir/gradle/spotless.gradle"
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            // Treat all Kotlin warnings as errors
+//            allWarningsAsErrors = true
+
+            freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
+
+            // Enable experimental coroutines APIs, including Flow
+            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi'
+            freeCompilerArgs += '-Xopt-in=kotlinx.coroutines.FlowPreview'
+            freeCompilerArgs += '-Xopt-in=kotlin.Experimental'
+
+            // Set JVM target to 1.8
+            jvmTarget = "1.8"
+        }
+    }
+
+    afterEvaluate {
+        tasks['clean'].dependsOn installGitHooks
+        tasks['assemble'].dependsOn installGitHooks
+    }
+
+}
+
+
