@@ -15,6 +15,11 @@ object Libs {
 
     const val material = "com.google.android.material:material:1.3.0"
 
+    object Detekt {
+        const val version = "1.0.0-RC16"
+        const val detekt = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$version"
+    }
+
     object Kotlin {
         const val version = "1.4.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
