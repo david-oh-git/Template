@@ -7,4 +7,5 @@ object BuildPlugins {
     const val android_application = "com.android.application"
     const val kotlin_kapt = "kotlin-kapt"
     const val detekt = "io.gitlab.arturbosch.detekt"
+    const val benManes =  "com.github.ben-manes.versions"
 }
