@@ -53,11 +53,34 @@ object Libs {
         const val coreKtx = "androidx.core:core-ktx:1.3.2"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
 
+        object RecyclerView {
+            private const val version = "1.1.0"
+            const val recyclerView = "androidx.recyclerview:recyclerview:$version"
+        }
+
+        object Navigation {
+            private const val version = "2.3.4"
+            const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+            const val ui = "androidx.navigation:navigation-ui-ktx:$version"
+            const val dynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:$version"
+            const val testing = "androidx.navigation:navigation-testing:$version"
+            const val safeArgsplugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
+        }
+
+        object Fragment {
+            private const val version = "1.3.2"
+            const val fragment = "androidx.fragment:fragment-ktx:$version"
+            const val testing = "androidx.fragment:fragment-testing:$version"
+        }
+
         object Lifecycle {
-            private const val version = "2.3.0"
-            const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha02"
+            private const val version = "2.3.1"
             const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
             const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
+            const val compiler = "androidx.lifecycle:lifecycle-compiler:$version"
+            const val extentions = "androidx.lifecycle:lifecycle-extentions:$version"
+            const val lifecycle = "androidx.lifecycle:lifecycle-common-java8:$version"
+            const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
         }
 
         object Test {
@@ -75,11 +98,27 @@ object Libs {
         }
 
         object Room {
-            private const val version = "2.2.5"
+            private const val version = "2.2.6"
             const val runtime = "androidx.room:room-runtime:$version"
             const val ktx = "androidx.room:room-ktx:$version"
             const val compiler = "androidx.room:room-compiler:$version"
+            const val test = "androidx.room:room-testing:$version"
         }
+    }
+
+    object Junit5 {
+        private const val version = "5.7.0"
+        const val vantage = "org.junit.vintage:junit-vintage-engine:$version"
+        const val api = "org.junit.jupiter:junit-jupiter-api:$version"
+        const val engine = "org.junit.jupiter:junit-jupiter-engine:$version"
+        const val platform = "org.junit.platform:junit-platform-launcher:$version"
+    }
+
+    object Dagger2 {
+        private const val version = "2.32"
+        const val dagger = "com.google.dagger:dagger:$version"
+        const val compiler = "com.google.dagger:dagger-compiler:$version"
+        const val testCompiler = "com.google.dagger:dagger-compiler:$version"
     }
 
 }
